@@ -13,9 +13,7 @@ export default function Landing() {
   return (
     <div id="landing">
       <header>
-        <div className="logo">
-          
-        </div>
+        <div className="logo"></div>
         <h1>OpenEyes e-learning</h1>
       </header>
       <section className="content">

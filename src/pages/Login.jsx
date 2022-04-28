@@ -9,6 +9,7 @@ import { loginUser } from "../scripts/firebaseAuth";
 
 export default function Login({ uidState }) {
   const [uid, setUID] = uidState;
+
   const navigation = useNavigate();
 
   // Local state
@@ -18,15 +19,20 @@ export default function Login({ uidState }) {
   // Method
   async function onLogin(event) {
     event.preventDefault();
-
-    const returningUID = await loginUser(email, password);
-
-    if (returningUID) {
-      setUID(returningUID);
-      navigation("/dashboard");
-    }
+    const payload = await loginUser(email, password);
+    const { data, error } = payload;
+    error === true ? onFailure(data) : onSucess(data);
   }
 
+  function onSucess(data) {
+    setUID(data);
+    navigation("/dashboard");
+  }
+
+  function onFailure(errorText) {
+    console.error(errorText);
+    alert(`Sorry something happened: ${errorText}`);
+  }
   return (
     <div id="login">
       <h1>Welcome back racing</h1>
@@ -40,7 +46,6 @@ export default function Login({ uidState }) {
         Did you forget your password? Then{" "}
         <Link to="/recover-password">click here</Link>
       </p>
-
     </div>
   );
 }
