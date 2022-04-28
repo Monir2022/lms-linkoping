@@ -23,6 +23,7 @@ export default function SignUp({ uidState }) {
 
     // 1 Create UID
     const newUID = await createUser(email, password);
+    console.log(newUID)
 
     // 2 Create user document
     const newUser = {
