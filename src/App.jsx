@@ -10,7 +10,7 @@ import UnloggedRoutes from "./routes/UnloggedRoutes";
 export default function App() {
   const [uid, setUID] = useState(null);
 
-  console.log("App.jsx uid", uid);
+  
 
   return (
     <div className="App">
