@@ -31,6 +31,7 @@ export default function SignUp({ uidState }) {
       age: age,
       city: city,
     };
+    console.log(newUser)
     const payload = await createDocumentWithId("users", newUID, newUser);
 
     // If it works i will navigate to the dashboard page
