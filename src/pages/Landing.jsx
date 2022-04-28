@@ -24,7 +24,7 @@ export default function Landing() {
           indigenous cultures around the world
         </h2>
         {Content}
-        <Link to="/login">Start Now</Link>
+        <Link to="/home">Start Now</Link>
       </section>
     </div>
   );
