@@ -1,9 +1,9 @@
 // Project files
 import { deleteDocument, updateDocument } from "../scripts/fireStore";
 
-export default function UserCard({ item, userState }) {
-  const { id, active, name, age, imageURL } = item;
-  const [users, setUsers] = userState;
+export default function CourseCard({ item, courseState }) {
+  const { id, active, title ,duration, imageURL, description } = item;
+  const [courses, setCourses] = courseState;
 
   // Method
   function changeActive() {
@@ -21,11 +21,11 @@ export default function UserCard({ item, userState }) {
   }
 
   function updateSucceed(editedItem) {
-    const clonedUsers = [...users];
-    const index = clonedUsers.findIndex((item) => item.id === editedItem.id);
+    const clonedCourses = [...courses];
+    const index = clonedCourses.findIndex((item) => item.id === editedItem.id);
 
-    clonedUsers[index] = editedItem;
-    setUsers(clonedUsers);
+    clonedCourses[index] = editedItem;
+    setCourses(clonedCourses);
     alert("Updated succeesfully");
   }
 
@@ -42,11 +42,11 @@ export default function UserCard({ item, userState }) {
   }
 
   function deleteSucceed() {
-    const clonedUsers = [...users];
-    const index = clonedUsers.findIndex((item) => item.id === id);
+    const clonedCourses = [...courses];
+    const index = clonedCourses.findIndex((item) => item.id === id);
 
-    clonedUsers.splice(index, 1);
-    setUsers(clonedUsers);
+    clonedCourses.splice(index, 1);
+    setCourses(clonedCourses);
     alert("Deleted succeesfully");
   }
 
@@ -56,10 +56,11 @@ export default function UserCard({ item, userState }) {
   }
 
   return (
-    <article className="user-card">
+    <article className="course-card">
       <img src={imageURL} alt="Driver portrait" />
-      <h3>{name}</h3>
-      <p> {age}</p>
+      <h3>{title}</h3>
+      <p> Duration: {duration} months</p>
+      <p>{description}</p>
       <label>
         Is currently driving?
         <input type="checkbox" checked={active} onChange={changeActive} />
