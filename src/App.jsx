@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 // Project files
 import LoggedRoutes from "./routes/LoggedRoutes";
 import UnloggedRoutes from "./routes/UnloggedRoutes";
+import "./styles/styles.css";
+
 
 
 export default function App() {

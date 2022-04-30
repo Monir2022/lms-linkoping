@@ -2,27 +2,26 @@
 import { Link } from "react-router-dom";
 
 // Project files
-
-import ContentItem from "../components/ContentItem";
+import LandingContent from "../components/LandingContent";
 import JSONContent from "../data/landing-content.json";
 
 export default function Landing() {
   const Content = JSONContent.map((item) => (
-    <ContentItem key={item.id} item={item} />
+    <LandingContent key={item.id} item={item} />
   ));
   return (
     <div id="landing">
       <header>
         <div className="logo"></div>
-        <h1>OpenEyes e-learning</h1>
+        <h1>Welcome to LMS linkoping</h1>
       </header>
       <section className="content">
         <h2>
-          OpenEyes is a free online learning platform that offers courses about
-          indigenous cultures around the world
+        LMS linkoping is a free online learning platform that offers courses about
+          web development.
         </h2>
-        {Content}
-        <Link to="/home">Start Now</Link>
+        {LandingContent}
+        <Link to="/login">Start Now</Link>
       </section>
     </div>
   );

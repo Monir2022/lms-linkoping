@@ -35,17 +35,17 @@ export default function Login({ uidState }) {
   }
   return (
     <div id="login">
-      <h1>Welcome back racing</h1>
-      <p>Please login to access all our content</p>
+      <header>
+        <h3>Login to LMS linkoping</h3>
+      </header>      
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />
         <InputField setup={form.password} state={[password, setPassword]} />
-        <button>Submit</button>
-      </form>
-      <p>
-        Did you forget your password? Then{" "}
-        <Link to="/recover-password">click here</Link>
-      </p>
+        <button>Submit</button>               
+        <Link to="/signup">Sign up</Link>
+        <Link to="/">Landing page</Link>        
+        <Link to="/recover-password">Forget password</Link>      
+      </form>      
     </div>
   );
 }
