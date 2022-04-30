@@ -6,14 +6,8 @@ export default function Dashboard({ uidState }) {
 
   return (
     <div id="dashboard">
-      <h1>My super fanpage about racing 🏁</h1>
-
-      <Link to="/courses">Users 👦</Link>
-      <br />
-      <Link to="/category/vehicles">Vehicles 🏎</Link>
-      <br />
-      <Link to="/category/companies">Companies 🏙</Link>
-      <br />
+      <h1>Welcome to learning management system</h1>
+      <Link to="/courses"> Here are your enrolled courses</Link>
       <button onClick={() => setUID(null)}>Logout</button>
     </div>
   );

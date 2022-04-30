@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 // Project files
 import { deleteDocument, updateDocument } from "../scripts/fireStore";
 
 export default function CourseCard({ item, courseState }) {
-  const { id, active, title ,duration, imageURL, description } = item;
+  const { id, active, title, duration, imageURL, description } = item;
   const [courses, setCourses] = courseState;
-
+  console.log(imageURL);
   // Method
   function changeActive() {
     const editedItem = { ...item };
@@ -60,14 +61,12 @@ export default function CourseCard({ item, courseState }) {
       <img src={imageURL} alt="Driver portrait" />
       <h3>{title}</h3>
       <p> Duration: {duration} months</p>
-      <p>{description}</p>
+      <p>{description}</p>      
+      <Link to="/course-details"> View details</Link>      
       <label>
-        Is currently driving?
         <input type="checkbox" checked={active} onChange={changeActive} />
       </label>
       <button onClick={() => onDelete(id)}>Delete</button>
-      
     </article>
   );
 }
-

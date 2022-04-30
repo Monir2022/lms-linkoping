@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Project files
 import { readCollection } from "../scripts/fireStore";
-
 import CourseCard from "../components/CourseCard";
 
 export default function Courses() {
@@ -43,8 +43,8 @@ export default function Courses() {
 
   return (
     <div id="courses">
-      <h1>Our Courses</h1>
-      <div className="grid">{Cards}</div>
+      <h1>My Courses</h1>
+      <div className="grid">{Cards}</div>      
     </div>
   );
 }
