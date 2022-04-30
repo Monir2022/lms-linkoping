@@ -8,7 +8,7 @@ export default function Dashboard({ uidState }) {
     <div id="dashboard">
       <h1>My super fanpage about racing 🏁</h1>
 
-      <Link to="/drivers">Drivers 👦</Link>
+      <Link to="/users">Users 👦</Link>
       <br />
       <Link to="/category/vehicles">Vehicles 🏎</Link>
       <br />
