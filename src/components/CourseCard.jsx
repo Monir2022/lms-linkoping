@@ -53,12 +53,12 @@ export default function CourseCard({ item, courseState }) {
 
   function deleteFail(error) {
     console.log(error);
-    alert("We could not modify the driver. Try again");
+    alert("It is not possible to modify. Try again");
   }
 
   return (
     <article className="course-card">
-      <img src={imageURL} alt="Driver portrait" />
+      <img src={imageURL} alt=" " />
       <h3>{title}</h3>
       <p> Duration: {duration} months</p>
       <p>{description}</p>      

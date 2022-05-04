@@ -1,16 +1,12 @@
 
-export default function ContentItem({ item }) {
-    const { title, photo, fact1, fact2, fact3 } = item;
-   // const photoObject = require(`assets/pictures/${photo}`);
-   // const photoURL = photoObject.default;
-  
+export default function LandingContent({ item }) {
+    const { title, photo, description } = item;
+   
     return (
-      <section className="content-item">
-       
-        <h3>{title}</h3>
-        <p>{fact1}</p>
-        <p>{fact2}</p>
-        <p>{fact3}</p>
-      </section>
+      <div className="landing-content">  
+        <img src={photo} alt={photo} />        
+        <p>{description}</p>    
+             
+      </div>
     );
   }

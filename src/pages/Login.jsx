@@ -36,7 +36,7 @@ export default function Login({ uidState }) {
   return (
     <div id="login">
       <header>
-        <h3>Login to LMS linkoping</h3>
+        <h2>Login to LMS linkoping</h2>
       </header>      
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />

@@ -6,7 +6,7 @@ import LandingContent from "../components/LandingContent";
 import JSONContent from "../data/landing-content.json";
 
 export default function Landing() {
-  const Content = JSONContent.map((item) => (
+  const landingContent = JSONContent.map((item) => (
     <LandingContent key={item.id} item={item} />
   ));
   return (
@@ -20,7 +20,7 @@ export default function Landing() {
         LMS linkoping is a free online learning platform that offers courses about
           web development.
         </h2>
-        {LandingContent}
+        {landingContent}
         <Link to="/login">Start Now</Link>
       </section>
     </div>
