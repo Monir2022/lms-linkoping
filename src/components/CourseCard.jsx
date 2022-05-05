@@ -5,6 +5,7 @@ import { deleteDocument, updateDocument } from "../scripts/fireStore";
 export default function CourseCard({ item, courseState }) {
   const { id, active, title, duration, imageURL, description } = item;
   const [courses, setCourses] = courseState;
+  console.log(title)
   
   // Method
   function changeActive() {
@@ -32,7 +33,7 @@ export default function CourseCard({ item, courseState }) {
 
   function updateFail(data) {
     console.error(data);
-    alert("Sorry we cannot update your driver. Try again");
+    alert("Sorry we cannot update your course. Try again");
   }
 
   async function onDelete(id) {
@@ -62,7 +63,7 @@ export default function CourseCard({ item, courseState }) {
       <h3>{title}</h3>
       <p> Duration: {duration} months</p>
       <p>{description}</p>      
-      <Link to="/course-details"> View details</Link>  
+      <Link to={"/course-details/"+ title}> View details</Link>  
           
       <label>
         <input type="checkbox" checked={active} onChange={changeActive} />

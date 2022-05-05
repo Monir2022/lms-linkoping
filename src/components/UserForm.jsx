@@ -48,10 +48,9 @@ export default function UserForm({ usersState }) {
 
   return (
     <form onSubmit={onCreate}>
-      <h2>Add a new driver</h2>
+      <h2>Add a new course</h2>
       <InputField setup={form.name} state={[name, setName]} />
-      <InputField setup={form.age} state={[age, setAge]} />
-      
+      <InputField setup={form.age} state={[age, setAge]} />      
       
       <button>Submit</button>
       <button onClick={resetForm}>Reset</button>

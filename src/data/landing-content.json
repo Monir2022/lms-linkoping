@@ -1,21 +1,18 @@
 [
   {
     "id": 1,
-    "photo": "landing1.jpg",
-    "title": "Why study with us?",
-    "description": "370 million people in more than 70 countries identify themselves as Indigenous Peoples"
+    "photo": "landing1.jpg",    
+    "description": "Our learning management system is free for all and our courses are suitable for people from all background. "
   },
 
   {
     "id": 2,
-    "photo": "landing1.jpg",
-    "title": "Why study with us?",
-    "description": "Our Learning Management System is easy to use"
+    "photo": "landing2.jpg",    
+    "description": "We have jobb oriented courses and you can get help from our mentor"
   },
   {
     "id": 3,
-    "photo": "landing1.jpg",
-    "title": "Why study with us?",
-    "description": "Our Learning Management System is easy to use"
+    "photo": "landing3.jpg",    
+    "description": "Our mentors are highly qualified and very helpful for the users"
   }
 ]

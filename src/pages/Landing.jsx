@@ -12,14 +12,17 @@ export default function Landing() {
   return (
     <div id="landing">
       <header>
-        <div className="logo"></div>
+        <div className="logo">
+          <img src="lms logo.png" alt = " "/>
+        </div>
         <h1>Welcome to LMS linkoping</h1>
       </header>
       <section className="content">
-        <h2>
-        LMS linkoping is a free online learning platform that offers courses about
-          web development.
-        </h2>
+        <h3>
+          LMS linkoping is a free online learning platform that offers courses
+          about web development.
+        You need to login to get access all of our content
+        </h3>
         {landingContent}
         <Link to="/login">Start Now</Link>
       </section>

@@ -1,34 +1,34 @@
 import { useEffect, useState } from "react";
 
-
 // Project files
 import { readCollection } from "../scripts/fireStore";
 import CourseCard from "../components/CourseCard";
+import { useAuth } from "state/AuthProvider";
 
 export default function Courses() {
   // Local state
   const [courses, setCourses] = useState([]);
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
+  const { user } = useAuth();
 
   // Method
   useEffect(() => {
     async function loadData() {
-      const payload = await readCollection("courses");
-      const { data, error } = payload;
+      const data = await readCollection("courses").catch(onFail);
 
-      error ? loadFail(data) : loadSucceed(data);
+      if (data) onSuccess(data);
     }
 
     loadData();
   }, []);
 
-  function loadSucceed(data) {
+  function onSuccess(data) {
     setCourses(data);
     setStatus(1);
   }
 
-  function loadFail(error) {
-    console.error(error);
+  function onFail(error) {
+    console.error(error.code);
     setStatus(2);
   }
 
@@ -44,7 +44,10 @@ export default function Courses() {
   return (
     <div id="courses">
       <h1>My Courses</h1>
-      <div className="grid">{Cards}</div>      
+      <header>
+        {user.isTeacher ? <h3>My teaching</h3> : <h3>My learning</h3>}
+      </header>
+      <div className="grid">{Cards}</div>
     </div>
   );
 }
