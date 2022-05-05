@@ -8,7 +8,7 @@ import Courses from "pages/Courses";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-import RecoverPassword from "../pages/RecoverPassword";
+
 
 
 export default function LoggedRoutes({ uidState }) {
@@ -19,7 +19,7 @@ export default function LoggedRoutes({ uidState }) {
       <Route path="dashboard" element={<Dashboard uidState={uidState} />} />
       <Route path="login" element={<Login uidState={uidState} />} />
       <Route path="sign-up" element={<SignUp uidState={uidState} />} />
-      <Route path="recover-password" element={<RecoverPassword />} />
+      
     </Routes>
   );
 }
