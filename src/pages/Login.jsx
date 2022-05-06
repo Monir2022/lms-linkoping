@@ -30,8 +30,7 @@ export default function Login({uidState} ) {
   }
 
   return (
-    <div id="login">
-      <h1>Welcome back racing</h1>
+    <div id="login">      
       <p>Please login to access all our content</p>
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />

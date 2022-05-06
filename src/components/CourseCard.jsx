@@ -5,8 +5,7 @@ import { deleteDocument, updateDocument } from "../scripts/fireStore";
 export default function CourseCard({ item, courseState, loggedUser }) {
   const { id, active, title, duration, imageURL, description } = item;
   const [courses, setCourses] = courseState;
- 
-  
+
   // Method
   function changeActive() {
     const editedItem = { ...item };
@@ -62,13 +61,14 @@ export default function CourseCard({ item, courseState, loggedUser }) {
       <img src={imageURL} alt=" " />
       <h3>{title}</h3>
       <p> Duration: {duration} months</p>
-      <p>{description}</p>      
-      <Link to={"/course-details/"+ title}> View details</Link>  
-          
+      <p>{description}</p>
+
       <label>
         <input type="checkbox" checked={active} onChange={changeActive} />
       </label>
-      {loggedUser?.isTeacher&&<button onClick={() => onDelete(id)}>Delete</button>}
+      {loggedUser?.isTeacher && (
+        <button onClick={() => onDelete(id)}>Delete</button>
+      )}
     </article>
   );
 }

@@ -4,15 +4,16 @@ import { useEffect, useState } from "react";
 import { readCollection, readDocument } from "../scripts/fireStore";
 
 import CourseCard from "../components/CourseCard";
-import {onAuthStateChanged} from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import StudentList from "components/StudentList";
 
-import {authentification} from "../scripts/firebase"
-
+import { authentification } from "../scripts/firebase";
 
 export default function Courses() {
   // Local state
   const [courses, setCourses] = useState([]);
-  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error 
+  const [tab, setTab] = useState(true);
+  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
   const [loggedUser, setLoggedUser] = useState({});
 
   // Method
@@ -26,17 +27,19 @@ export default function Courses() {
     loadData();
 
     onAuthStateChanged(authentification, async (user) => {
-      if (user){
-        const user_data= await readDocument("users", user.uid)
-        setLoggedUser(user_data)
-      } 
-      else console.log("AuthProvider user signed out");
+      if (user) {
+        const user_data = await readDocument("users", user.uid);
+        setLoggedUser(user_data);
+      } else console.log("AuthProvider user signed out");
     });
   }, []);
 
-
-
-
+  const coursefunc = () => {
+    setTab(true);
+  };
+  const listfunc = () => {
+    setTab(false);
+  };
 
   function onSuccess(data) {
     setCourses(data);
@@ -50,7 +53,12 @@ export default function Courses() {
 
   // Components
   const Cards = courses.map((item) => (
-    <CourseCard key={item.id} loggedUser={loggedUser} item={item} courseState={[courses, setCourses]} />
+    <CourseCard
+      key={item.id}
+      loggedUser={loggedUser}
+      item={item}
+      courseState={[courses, setCourses]}
+    />
   ));
 
   // Safeguard
@@ -59,9 +67,14 @@ export default function Courses() {
 
   return (
     <div id="courses">
-      <h1>My Courses</h1>
+      {loggedUser.isTeacher && (
+        <div>
+          <button onClick={coursefunc}>My Courses</button>
+          <button onClick={listfunc}>Student List</button>
+        </div>
+      )}
       <p> Hi {loggedUser.name}</p>
-      <div className="grid">{Cards}</div>
+      {tab ? <div className="grid">{Cards}</div> : <StudentList />}
     </div>
   );
 }
