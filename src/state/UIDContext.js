@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 // Properties
 const Context = createContext(null);
 
-// This is for App.jsx
+
 export function UIDProvider({ children }) {
   // Local state
   const [uid, setUID] = useState(null);
@@ -15,7 +15,6 @@ export function UIDProvider({ children }) {
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
-// This is for every component that needs the user state
 export function useUID() {
   const context = useContext(Context);
   const errorText =

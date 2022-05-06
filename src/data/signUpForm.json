@@ -1,12 +1,12 @@
 {
   "name": {
     "label": "Full name",
-    "placeholder": "Ex: Jhon Doe",
+    "placeholder": "Ex: Monir Akhand",
     "type": "text"
   },
   "email": {
     "label": "E-mail",
-    "placeholder": "Ex: jhon_doe@yahoo.com",
+    "placeholder": "Ex: monir@gmail.com",
     "type": "email"
   },
   "age": {
@@ -16,7 +16,7 @@
   },
   "city": {
     "label": "City",
-    "placeholder": "Ex: New York",
+    "placeholder": "Ex: Stockholm",
     "type": "text"
   },
   "password": {

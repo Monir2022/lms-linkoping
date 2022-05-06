@@ -24,7 +24,7 @@ export default function Landing() {
         You need to login to get access all of our content
         </h3>
         {landingContent}
-        <Link to="/login">Start Now</Link>
+        <Link to="/signup">Start Now</Link>
       </section>
     </div>
   );

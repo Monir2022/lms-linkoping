@@ -7,8 +7,10 @@ import InputField from "../components/InputField";
 import form from "../data/loginForm.json";
 import { loginUser } from "../scripts/firebaseAuth";
 
-export default function Login({ uidState }) {
-  const [uid, setUID] = uidState;
+
+export default function Login({uidState} ) {
+  const [uid, setUID] = uidState
+  
   const navigation = useNavigate();
 
   // Local state
