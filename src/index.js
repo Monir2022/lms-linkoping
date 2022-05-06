@@ -5,6 +5,6 @@ import { UIDProvider } from "state/UIDContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<UIDProvider>
+root.render(
     <App />
-  </UIDProvider>);
+  );

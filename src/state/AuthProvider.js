@@ -17,7 +17,10 @@ export function AuthProvider({ children }) {
   // Methods
   useEffect(() => {
     onAuthStateChanged(authentification, (user) => {
-      if (user) setAuth(user.uid);
+      if (user){
+        setAuth(user.uid);
+        console.log(user)
+      } 
       else console.log("AuthProvider user signed out");
     });
   }, []);

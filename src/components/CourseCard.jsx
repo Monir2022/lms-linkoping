@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 // Project files
 import { deleteDocument, updateDocument } from "../scripts/fireStore";
 
-export default function CourseCard({ item, courseState }) {
+export default function CourseCard({ item, courseState, loggedUser }) {
   const { id, active, title, duration, imageURL, description } = item;
   const [courses, setCourses] = courseState;
-  console.log(title)
+ 
   
   // Method
   function changeActive() {
@@ -68,7 +68,7 @@ export default function CourseCard({ item, courseState }) {
       <label>
         <input type="checkbox" checked={active} onChange={changeActive} />
       </label>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      {loggedUser?.isTeacher&&<button onClick={() => onDelete(id)}>Delete</button>}
     </article>
   );
 }

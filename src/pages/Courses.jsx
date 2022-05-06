@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 
 // Project files
-import { readCollection } from "../scripts/fireStore";
+import { readCollection, readDocument } from "../scripts/fireStore";
+
 import CourseCard from "../components/CourseCard";
+import {onAuthStateChanged} from "firebase/auth";
+
+import {authentification} from "../scripts/firebase"
 
 
 export default function Courses() {
   // Local state
   const [courses, setCourses] = useState([]);
-  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
-  
- 
+  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error 
+  const [loggedUser, setLoggedUser] = useState({});
 
   // Method
   useEffect(() => {
@@ -21,7 +24,19 @@ export default function Courses() {
     }
 
     loadData();
+
+    onAuthStateChanged(authentification, async (user) => {
+      if (user){
+        const user_data= await readDocument("users", user.uid)
+        setLoggedUser(user_data)
+      } 
+      else console.log("AuthProvider user signed out");
+    });
   }, []);
+
+
+
+
 
   function onSuccess(data) {
     setCourses(data);
@@ -35,7 +50,7 @@ export default function Courses() {
 
   // Components
   const Cards = courses.map((item) => (
-    <CourseCard key={item.id} item={item} courseState={[courses, setCourses]} />
+    <CourseCard key={item.id} loggedUser={loggedUser} item={item} courseState={[courses, setCourses]} />
   ));
 
   // Safeguard
@@ -45,7 +60,7 @@ export default function Courses() {
   return (
     <div id="courses">
       <h1>My Courses</h1>
-      
+      <p> Hi {loggedUser.name}</p>
       <div className="grid">{Cards}</div>
     </div>
   );
