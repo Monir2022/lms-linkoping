@@ -1,9 +1,10 @@
 // NPM packages
 import { Link } from "react-router-dom";
-import { UIDProvider } from "state/UIDContext";
 
-export default function Dashboard( ) {
-  const {setUID} = UIDProvider;
+
+export default function Dashboard({uidState} ) {
+  const {uid, setUID} = uidState
+ 
 
   return (
     <div id="dashboard">

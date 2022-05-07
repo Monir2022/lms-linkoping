@@ -5,7 +5,7 @@ import EmptyText from "components/EmptyTextCategory";
 import ItemCategory from "components/ItemAdminCategory";
 import FormCreateItem from "components/FormCreateItem";
 import { readCollection } from "scripts/fireStore";
-import { useItems } from "state/ItemsContext";
+import { useItems } from "state/CoursesContext";
 import { useModal } from "state/ModalContext";
 
 export default function Admin() {

@@ -20,12 +20,9 @@ export default function Courses() {
   useEffect(() => {
     async function loadData() {
       const data = await readCollection("courses").catch(onFail);
-
       if (data) onSuccess(data);
     }
-
     loadData();
-
     onAuthStateChanged(authentification, async (user) => {
       if (user) {
         const user_data = await readDocument("users", user.uid);
@@ -45,7 +42,6 @@ export default function Courses() {
     setCourses(data);
     setStatus(1);
   }
-
   function onFail(error) {
     console.error(error.code);
     setStatus(2);
@@ -60,7 +56,6 @@ export default function Courses() {
       courseState={[courses, setCourses]}
     />
   ));
-
   // Safeguard
   if (status === 0) return <p>Loading... 🕕</p>;
   if (status === 2) return <p>Error... ❌</p>;
@@ -73,7 +68,7 @@ export default function Courses() {
           <button onClick={listfunc}>Student List</button>
         </div>
       )}
-      <p> Hi {loggedUser.name}</p>
+      <p> Hi, you have logged in as  {loggedUser.name}</p>
       {tab ? <div className="grid">{Cards}</div> : <StudentList />}
     </div>
   );

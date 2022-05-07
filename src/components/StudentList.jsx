@@ -20,6 +20,7 @@ export default function StudentList() {
 
   return (
     <div className="student-list">
+      <h3>Here are list of the students who are enrolled to lms linkoping</h3>
       <ul>{studentList}</ul>
     </div>
   );

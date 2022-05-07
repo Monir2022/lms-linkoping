@@ -5,18 +5,18 @@ const Context = createContext(null);
 
 // Methods
 // For the parent
-export function ItemsProvider({ children }) {
+export function CoursesProvider({ children }) {
   // Local state
-  const [items, setItems] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   // Properties
-  const value = { items, setItems };
+  const value = { courses, setCourses };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
 // For the child
-export function useItems() {
+export function useCourses() {
   const context = useContext(Context);
   const errorText =
     "To use useItems(), you need to wrap the parent component with <ItemsProvider/>";
