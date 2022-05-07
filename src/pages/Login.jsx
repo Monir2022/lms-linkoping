@@ -7,10 +7,9 @@ import InputField from "../components/InputField";
 import form from "../data/loginForm.json";
 import { loginUser } from "../scripts/firebaseAuth";
 
+export default function Login({ uidState }) {
+  const [uid, setUID] = uidState;
 
-export default function Login({uidState} ) {
-  const [uid, setUID] = uidState
-  
   const navigation = useNavigate();
 
   // Local state
@@ -30,14 +29,14 @@ export default function Login({uidState} ) {
   }
 
   return (
-    <div id="login">      
+    <div id="login">
       <p>Please login to access all our content</p>
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />
         <InputField setup={form.password} state={[password, setPassword]} />
         <button>Submit</button>
+        <Link to="/recover-password">Recover password</Link>
       </form>
-      <Link to= "/recover-password">Recover password</Link>
     </div>
   );
 }

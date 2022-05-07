@@ -7,4 +7,5 @@
 @import "./components/landing.css";
 @import "./components/studentList.css";
 @import "./components/sign-up.css";
-@import "./components/modal.css"
+@import "./components/modal.css";
+@import "./components/recover-password.css";

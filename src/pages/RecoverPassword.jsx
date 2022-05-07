@@ -16,12 +16,12 @@ export default function RecoverPassword() {
     event.preventDefault();
 
     await recoverUser(email);
-    alert(`We sent an email to ${email}. Check you spam folder as well.`);
+    alert(`We sent an email to ${email}`);
   }
 
   return (
     <div id="recover-password">
-      <h1>Sorry to hear you have problems</h1>
+      <h1>Don´t worry you will help you to get a new password</h1>
       <p>
         Please write the email you used to created your account so we can send
         you an email with instructions on how to reset and create a new
