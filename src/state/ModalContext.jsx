@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 
 const Context = createContext(null);
 
-
 export function ModalProvider({ children }) {
   // Local state
   const [modal, setModal] = useState(null);

@@ -31,10 +31,10 @@ export default function Courses() {
     });
   }, []);
 
-  const coursefunc = () => {
+  function viewCourseList(){
     setTab(true);
   };
-  const listfunc = () => {
+  function viewStudentList(){
     setTab(false);
   };
 
@@ -64,11 +64,11 @@ export default function Courses() {
     <div id="courses">
       {loggedUser.isTeacher && (
         <div>
-          <button onClick={coursefunc}>My Courses</button>
-          <button onClick={listfunc}>Student List</button>
+          <button onClick={viewCourseList}>My Courses</button>
+          <button onClick={viewStudentList}>Student List</button>
         </div>
       )}
-      <p> Hi, you have logged in as  {loggedUser.name}</p>
+      <p> Hi, you have logged in as {loggedUser.name}</p>
       {tab ? <div className="grid">{Cards}</div> : <StudentList />}
       {loggedUser?.isTeacher && <button onClick={()=>setModal(<FormCreateCourse/>)}>Add</button>}
       {loggedUser?.isTeacher && <button>Update</button>}

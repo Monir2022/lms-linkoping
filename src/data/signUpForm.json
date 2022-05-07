@@ -1,7 +1,7 @@
 {
   "name": {
     "label": "Full name",
-    "placeholder": "Ex: Monir Akhand",
+    "placeholder": "Ex: Monir",
     "type": "text"
   },
   "email": {

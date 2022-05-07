@@ -9,8 +9,6 @@ import SignUp from "../pages/SignUp";
 import StudentList from "components/StudentList";
 import Modal from "components/Modal";
 
-
-
 export default function LoggedRoutes({ uidState }) {
   return (
     <Routes>

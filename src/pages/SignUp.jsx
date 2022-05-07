@@ -13,11 +13,11 @@ export default function SignUp({uidState}) {
   const [uid, setUID] = uidState
   const navigation = useNavigate();
 
-  const [name, setName] = useState("Eduardo");
-  const [email, setEmail] = useState("el_alienx@hotmail.com");
-  const [age, setAge] = useState("35");
-  const [city, setCity] = useState("Stockholm");
-  const [password, setPassword] = useState("12345678");
+  const [name, setName] = useState(" ");
+  const [email, setEmail] = useState(" ");
+  const [age, setAge] = useState(" ");
+  const [city, setCity] = useState(" ");
+  const [password, setPassword] = useState(" ");
 
   async function onSignUp(event) {
     event.preventDefault();
@@ -41,7 +41,7 @@ export default function SignUp({uidState}) {
   return (
     <div id="sign-up">
       <h1>Create an account</h1>
-      <p>Create an account with us to be able to add and edit drivers.</p>
+      <p>You will get acces to all of our content when you are ready with the account</p>
       <form onSubmit={onSignUp}>
         <InputField setup={signUpForm.name} state={[name, setName]} />
         <InputField setup={signUpForm.email} state={[email, setEmail]} />
