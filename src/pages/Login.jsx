@@ -25,7 +25,7 @@ export default function Login({uidState} ) {
 
     if (returningUID) {
       setUID(returningUID);
-      navigation("/dashboard");
+      navigation("/courses");
     }
   }
 

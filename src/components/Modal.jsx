@@ -1,6 +1,5 @@
 // NPM packages
 import { createPortal } from "react-dom";
-
 // Project files
 import { useModal } from "state/ModalContext";
 
