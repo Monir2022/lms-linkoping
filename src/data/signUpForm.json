@@ -1,26 +1,26 @@
 {
   "name": {
-    "label": "Full name",
+    "label": "Full name:",
     "placeholder": "Ex: Monir",
     "type": "text"
   },
   "email": {
-    "label": "E-mail",
+    "label": "E-mail:",
     "placeholder": "Ex: monir@gmail.com",
     "type": "email"
   },
   "age": {
-    "label": "Age",
+    "label": "Age:",
     "placeholder": "Ex: 30",
     "type": "number"
   },
   "city": {
-    "label": "City",
+    "label": "City:",
     "placeholder": "Ex: Stockholm",
     "type": "text"
   },
   "password": {
-    "label": "Password",
+    "label": "Password:",
     "placeholder": "********",
     "type": "password"
   }

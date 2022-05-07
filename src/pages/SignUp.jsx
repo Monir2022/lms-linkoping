@@ -52,9 +52,9 @@ export default function SignUp({uidState}) {
           state={[password, setPassword]}
         />
         <button>Submit</button>
-      </form>
-      <Link to="/login">Login</Link>
+        <Link to="/login">Login</Link>
       <Link to = "/recover-password">Recover password</Link>
+      </form>      
     </div>
   );
 }

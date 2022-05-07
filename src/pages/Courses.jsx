@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 // Project files
 import { readCollection, readDocument } from "../scripts/fireStore";
-import FormCreateCourse from "components/FormCreateCourse";
 import CourseCard from "../components/CourseCard";
 import { onAuthStateChanged } from "firebase/auth";
 import StudentList from "components/StudentList";
-import { useModal } from "state/ModalContext";
 import { authentification } from "../scripts/firebase";
+import Navigation from "components/Navigation";
 
 export default function Courses() {
-  const {setModal} = useModal();
+  
   // Local state
   const [courses, setCourses] = useState([]);
   const [tab, setTab] = useState(true);
@@ -62,6 +61,7 @@ export default function Courses() {
 
   return (
     <div id="courses">
+      <Navigation loggedUserState = {[loggedUser, setLoggedUser]}/>
       {loggedUser.isTeacher && (
         <div>
           <button onClick={viewCourseList}>My Courses</button>
@@ -70,7 +70,7 @@ export default function Courses() {
       )}
       <p> Hi, you have logged in as {loggedUser.name}</p>
       {tab ? <div className="grid">{Cards}</div> : <StudentList />}
-      {loggedUser?.isTeacher && <button onClick={()=>setModal(<FormCreateCourse/>)}>Add</button>}
+      {loggedUser?.isTeacher && <button>Add</button>}
       {loggedUser?.isTeacher && <button>Update</button>}
     </div>
   );
