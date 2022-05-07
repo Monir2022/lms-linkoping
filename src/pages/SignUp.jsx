@@ -54,6 +54,7 @@ export default function SignUp({uidState}) {
         <button>Submit</button>
       </form>
       <Link to="/login">Login</Link>
+      <Link to = "/recover-password">Recover password</Link>
     </div>
   );
 }

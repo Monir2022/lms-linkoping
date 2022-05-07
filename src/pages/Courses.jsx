@@ -9,7 +9,7 @@ import { useModal } from "state/ModalContext";
 import { authentification } from "../scripts/firebase";
 
 export default function Courses() {
-  const {modal, setModal} = useModal();
+  const {setModal} = useModal();
   // Local state
   const [courses, setCourses] = useState([]);
   const [tab, setTab] = useState(true);
