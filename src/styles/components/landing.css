@@ -22,9 +22,7 @@
   color: black;
   background-color: rgba(38, 73, 55, 0.459);
   font-weight: bold;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
+  border-radius: 10px;  
   height: 30px;
   width: 100px;
 }
@@ -32,3 +30,13 @@
 #landing {
   background-color: rgb(219, 223, 230);
 }
+
+.landing-button {
+    display: flex;
+    justify-content: center;    
+    padding: 1rem;    
+}
+.landing-button a:hover {
+    text-decoration: underline;
+    color:blueviolet
+  }

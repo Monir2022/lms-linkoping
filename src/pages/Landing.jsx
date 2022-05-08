@@ -24,7 +24,9 @@ export default function Landing() {
         You need to login to get access all of our content
         </h3>
         {landingContent}
+        <div className="landing-button">
         <Link to="/sign-up">Start Now</Link>
+        </div>        
       </section>
     </div>
   );
