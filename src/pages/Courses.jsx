@@ -5,10 +5,8 @@ import CourseCard from "../components/CourseCard";
 import { onAuthStateChanged } from "firebase/auth";
 import StudentList from "components/StudentList";
 import { authentification } from "../scripts/firebase";
-import Navigation from "components/Navigation";
 
 export default function Courses() {
-  
   // Local state
   const [courses, setCourses] = useState([]);
   const [tab, setTab] = useState(true);
@@ -30,12 +28,12 @@ export default function Courses() {
     });
   }, []);
 
-  function viewCourseList(){
+  function viewCourseList() {
     setTab(true);
-  };
-  function viewStudentList(){
+  }
+  function viewStudentList() {
     setTab(false);
-  };
+  }
 
   function onSuccess(data) {
     setCourses(data);
@@ -61,7 +59,6 @@ export default function Courses() {
 
   return (
     <div id="courses">
-      <Navigation loggedUserState = {[loggedUser, setLoggedUser]}/>
       {loggedUser.isTeacher && (
         <div>
           <button onClick={viewCourseList}>My Courses</button>
@@ -70,8 +67,6 @@ export default function Courses() {
       )}
       <p> Hi, you have logged in as {loggedUser.name}</p>
       {tab ? <div className="grid">{Cards}</div> : <StudentList />}
-      {loggedUser?.isTeacher && <button>Add</button>}
-      {loggedUser?.isTeacher && <button>Update</button>}
     </div>
   );
 }
