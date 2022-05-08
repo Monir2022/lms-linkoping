@@ -11,11 +11,11 @@ import RecoverPassword from "pages/RecoverPassword";
 export default function UnloggedRoutes({ uidState }) {
   return (
     <Routes>
-      <Route path= "/" element = {<Landing/>}/> 
-      <Route path = "/recover-password" element = {<RecoverPassword/>}/>     
+      <Route path="/" element={<Landing />} />
+      <Route path="/recover-password" element={<RecoverPassword />} />
       <Route path="login" element={<Login uidState={uidState} />} />
       <Route path="sign-up" element={<SignUp uidState={uidState} />} />
-      <Route path="*" element={<NotLogged />} />      
+      <Route path="*" element={<NotLogged />} />
     </Routes>
   );
 }

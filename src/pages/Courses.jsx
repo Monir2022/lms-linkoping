@@ -1,3 +1,4 @@
+//NPM Packages
 import { useEffect, useState } from "react";
 // Project files
 import { readCollection, readDocument } from "../scripts/fireStore";
@@ -12,7 +13,6 @@ export default function Courses() {
   const [tab, setTab] = useState(true);
   const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
   const [loggedUser, setLoggedUser] = useState({});
-
   // Method
   useEffect(() => {
     async function loadData() {
@@ -27,14 +27,12 @@ export default function Courses() {
       } else console.log("AuthProvider user signed out");
     });
   }, []);
-
   function viewCourseList() {
     setTab(true);
   }
   function viewStudentList() {
     setTab(false);
   }
-
   function onSuccess(data) {
     setCourses(data);
     setStatus(1);
@@ -43,20 +41,13 @@ export default function Courses() {
     console.error(error.code);
     setStatus(2);
   }
-
   // Components
   const Cards = courses.map((item) => (
-    <CourseCard
-      key={item.id}
-      loggedUser={loggedUser}
-      item={item}
-      courseState={[courses, setCourses]}
-    />
+    <CourseCard key={item.id} loggedUser={loggedUser} item={item} />
   ));
   // Safeguard
   if (status === 0) return <p>Loading... 🕕</p>;
   if (status === 2) return <p>Error... ❌</p>;
-
   return (
     <div id="courses">
       {loggedUser.isTeacher && (

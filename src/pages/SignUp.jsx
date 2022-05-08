@@ -1,7 +1,6 @@
 // NPM packages
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
 // Project files
 import InputField from "../components/InputField";
 import signUpForm from "../data/signUpForm.json";
@@ -23,7 +22,6 @@ export default function SignUp({uidState}) {
     event.preventDefault();
 
     const newUID = await createUser(email, password);
-
     const newUser = {
       name: name,
       age: age,
@@ -34,7 +32,7 @@ export default function SignUp({uidState}) {
     if (payload.error) alert("Could not create user");
     else {
       setUID(newUID);
-      navigation("/dashboard");
+      navigation("/courses");
     }
   }
 
