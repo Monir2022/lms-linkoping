@@ -1,0 +1,13 @@
+#courses {
+  background-color: rgb(219, 223, 230);
+}
+
+#courses button {
+  text-decoration: none;
+  color: rgb(34, 6, 6);
+  background-color: rgba(38, 73, 55, 0.459);
+  height: 43px;
+  width: 136px;
+  margin: 1rem;
+  border-radius: 1rem;
+}

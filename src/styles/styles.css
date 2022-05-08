@@ -2,9 +2,12 @@
 /* Base*/
 @import './base/layout.css';
 @import "./base/typography.css";
+
+/*Components*/
 @import "./components/login.css";
 @import "./components/landing.css";
 @import "./components/studentList.css";
 @import "./components/sign-up.css";
 @import "./components/recover-password.css";
 @import "./components/not-logged.css";
+@import "./components/courses.css";

@@ -1,4 +1,10 @@
 .student-list ul {
     list-style-type: none;
     font-size: bold;
+    padding: 0.2rem;
+}
+.student-list {
+    background-color: rgb(219, 223, 230);
+    width: 60%;
+    margin: 0 auto;
 }
