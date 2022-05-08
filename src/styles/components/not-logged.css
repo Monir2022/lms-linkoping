@@ -17,3 +17,8 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.notlogged-links {
+    display: flex;
+    justify-content: center;
+}

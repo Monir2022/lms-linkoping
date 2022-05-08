@@ -34,7 +34,7 @@ export default function Login({ uidState }) {
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />
         <InputField setup={form.password} state={[password, setPassword]} />
-        <button>Submit</button>
+        <button>Login</button>
         <Link to="/recover-password">Recover password</Link>
       </form>
     </div>
