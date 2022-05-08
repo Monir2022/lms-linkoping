@@ -10,11 +10,9 @@ import { recoverUser } from "../scripts/firebaseAuth";
 export default function RecoverPassword() {
   // Local state
   const [email, setEmail] = useState("");
-
   // Method
   async function onRecover(event) {
     event.preventDefault();
-
     await recoverUser(email);
     alert(`We sent an email to ${email}`);
   }
@@ -34,7 +32,9 @@ export default function RecoverPassword() {
       </form>
       <p>
         You can click here for going to login page instead
+        <div className="recover-password-link">
         <Link to="/login">Login</Link>
+        </div>        
       </p>
     </div>
   );
