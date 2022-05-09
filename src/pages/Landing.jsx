@@ -13,20 +13,20 @@ export default function Landing() {
     <div id="landing">
       <header>
         <div className="logo">
-          <img src="lms logo.png" alt = " "/>
+          <img src="lms logo.png" alt=" " />
         </div>
         <h1>Welcome to LMS linkoping</h1>
       </header>
       <section className="content">
         <h3>
           LMS linkoping is a free online learning platform that offers courses
-          about web development.
-        You need to login to get access all of our content
+          about web development. You need to login to get access all of our
+          content
         </h3>
         {landingContent}
         <div className="landing-button">
-        <Link to="/sign-up">Start Now</Link>
-        </div>        
+          <Link to="/sign-up">Start Now</Link>
+        </div>
       </section>
     </div>
   );

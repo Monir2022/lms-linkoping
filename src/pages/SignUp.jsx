@@ -50,7 +50,7 @@ export default function SignUp({ uidState }) {
       </form>
       <div className="signup-link">
         <Link to="/login">Login</Link>
-        <Link to="/recover-password">Recover password</Link>              
+        <Link to="/recover-password">Recover password</Link>
       </div>
     </div>
   );

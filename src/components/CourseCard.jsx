@@ -1,4 +1,4 @@
-//Project files
+
 export default function CourseCard({ item, loggedUser }) {
   const { title, duration, details, description } = item;
 

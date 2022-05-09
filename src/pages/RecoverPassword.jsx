@@ -25,7 +25,7 @@ export default function RecoverPassword() {
         you an email with instructions on how to reset and create a new
         password.
       </p>
-      
+
       <form onSubmit={onRecover}>
         <InputField setup={form.email} state={[email, setEmail]} />
         <button>Submit</button>
@@ -33,8 +33,8 @@ export default function RecoverPassword() {
       <p>
         You can click here for going to login page instead
         <div className="recover-password-link">
-        <Link to="/login">Login</Link>
-        </div>        
+          <Link to="/login">Login</Link>
+        </div>
       </p>
     </div>
   );
